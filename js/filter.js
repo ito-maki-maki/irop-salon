@@ -1,22 +1,6 @@
 (function() {
   'use strict';
 
-  // --- DOM References ---
-  var toggle = document.getElementById('filterToggle');
-  var arrow = document.getElementById('filterArrow');
-  var badge = document.getElementById('filterBadge');
-  var panel = document.getElementById('filterPanel');
-  var brightnessMin = document.getElementById('brightnessMin');
-  var brightnessMax = document.getElementById('brightnessMax');
-  var hueGrid = document.getElementById('hueGrid');
-  var grayChips = document.getElementById('grayChips');
-  var historyChips = document.getElementById('historyChips');
-  var colorChips = document.getElementById('colorChips');
-  var resetBtn = document.getElementById('filterReset');
-  var countEl = document.getElementById('filterCount');
-  var emptyEl = document.getElementById('filterEmpty');
-  var cards = document.querySelectorAll('.case-card');
-
   // --- State ---
   var state = {
     brightness: { min: null, max: null },
@@ -35,6 +19,11 @@
     hist: 'history',
     irop: 'colors'
   };
+
+  // --- DOM References (set in initFilter) ---
+  var toggle, arrow, badge, panel, brightnessMin, brightnessMax;
+  var hueGrid, grayChips, historyChips, colorChips;
+  var resetBtn, countEl, emptyEl, cards;
 
   // --- Toggle Panel ---
   function togglePanel() {
@@ -261,58 +250,79 @@
     applyFilters();
   }
 
-  // --- Event Binding ---
-  toggle.addEventListener('click', togglePanel);
+  // --- Initialize (called after cards are rendered) ---
+  function initFilter() {
+    toggle = document.getElementById('filterToggle');
+    arrow = document.getElementById('filterArrow');
+    badge = document.getElementById('filterBadge');
+    panel = document.getElementById('filterPanel');
+    brightnessMin = document.getElementById('brightnessMin');
+    brightnessMax = document.getElementById('brightnessMax');
+    hueGrid = document.getElementById('hueGrid');
+    grayChips = document.getElementById('grayChips');
+    historyChips = document.getElementById('historyChips');
+    colorChips = document.getElementById('colorChips');
+    resetBtn = document.getElementById('filterReset');
+    countEl = document.getElementById('filterCount');
+    emptyEl = document.getElementById('filterEmpty');
+    cards = document.querySelectorAll('.case-card');
 
-  brightnessMin.addEventListener('input', function() {
-    var val = this.value.trim();
-    state.brightness.min = val ? parseInt(val, 10) : null;
-    applyFilters();
-  });
+    // Event Binding
+    toggle.addEventListener('click', togglePanel);
 
-  brightnessMax.addEventListener('input', function() {
-    var val = this.value.trim();
-    state.brightness.max = val ? parseInt(val, 10) : null;
-    applyFilters();
-  });
+    brightnessMin.addEventListener('input', function() {
+      var val = this.value.trim();
+      state.brightness.min = val ? parseInt(val, 10) : null;
+      applyFilters();
+    });
 
-  hueGrid.addEventListener('click', function(e) {
-    var btn = e.target.closest('.filter-hue-btn');
-    if (!btn) return;
-    toggleChip(btn, state.hues);
-    applyFilters();
-  });
+    brightnessMax.addEventListener('input', function() {
+      var val = this.value.trim();
+      state.brightness.max = val ? parseInt(val, 10) : null;
+      applyFilters();
+    });
 
-  grayChips.addEventListener('click', function(e) {
-    var btn = e.target.closest('.filter-chip');
-    if (!btn) return;
-    toggleChip(btn, state.gray);
-    applyFilters();
-  });
+    hueGrid.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-hue-btn');
+      if (!btn) return;
+      toggleChip(btn, state.hues);
+      applyFilters();
+    });
 
-  historyChips.addEventListener('click', function(e) {
-    var btn = e.target.closest('.filter-chip');
-    if (!btn) return;
-    toggleChip(btn, state.history);
-    applyFilters();
-  });
+    grayChips.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-chip');
+      if (!btn) return;
+      toggleChip(btn, state.gray);
+      applyFilters();
+    });
 
-  colorChips.addEventListener('click', function(e) {
-    var btn = e.target.closest('.filter-color-btn');
-    if (!btn) return;
-    toggleChip(btn, state.colors);
-    applyFilters();
-  });
+    historyChips.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-chip');
+      if (!btn) return;
+      toggleChip(btn, state.history);
+      applyFilters();
+    });
 
-  resetBtn.addEventListener('click', resetFilters);
+    colorChips.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-color-btn');
+      if (!btn) return;
+      toggleChip(btn, state.colors);
+      applyFilters();
+    });
 
-  // --- Initialize ---
-  var hasFilters = readURL();
-  if (hasFilters) {
-    syncUI();
-    panel.hidden = false;
-    toggle.classList.add('filter-toggle--active');
-    applyFilters();
+    resetBtn.addEventListener('click', resetFilters);
+
+    // Read URL and apply
+    var hasFilters = readURL();
+    if (hasFilters) {
+      syncUI();
+      panel.hidden = false;
+      toggle.classList.add('filter-toggle--active');
+      applyFilters();
+    }
   }
+
+  // Wait for cases-rendered event from render.js
+  document.addEventListener('cases-rendered', initFilter);
 
 })();

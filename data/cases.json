@@ -1,0 +1,236 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "status": "published",
+      "brightness_min": 10,
+      "brightness_max": 12,
+      "hue": "beige",
+      "hue_label": "ベージュ系",
+      "hue_note": "やや黄みがかったブラウン",
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["none"],
+      "history_label": "特になし",
+      "before_photo": "images/IMG_6502.JPG",
+      "before_photo_alt": "Before: 明るめの茶髪、黄みがかったトーン",
+      "after_photo": "images/IMG_6503.JPG",
+      "after_photo_alt": "After: 黄みが抑えられ落ち着いたトーン",
+      "shampoo": [
+        { "color": "purple", "label": "PURPLE", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 },
+        { "color": "purple", "label": "PURPLE", "ratio": 1 }
+      ],
+      "contact_time": "5分",
+      "contact_time_note": null
+    },
+    {
+      "id": 2,
+      "status": "published",
+      "brightness_min": 8,
+      "brightness_max": 8,
+      "hue": "brown",
+      "hue_label": "ブラウン系",
+      "hue_note": "やや赤みのあるブラウン",
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["relaxer"],
+      "history_label": "縮毛矯正（アンダー部分）、毎日アイロン使用",
+      "before_photo": "images/IMG_6504.JPG",
+      "before_photo_alt": "Before: 暗めの茶髪、やや赤みあり",
+      "after_photo": "images/IMG_6505.JPG",
+      "after_photo_alt": "After: ツヤが出て整った印象",
+      "shampoo": [],
+      "treatment": [
+        { "color": "brown", "label": "BROWN", "ratio": 1 }
+      ],
+      "contact_time": "5分",
+      "contact_time_note": null
+    },
+    {
+      "id": 3,
+      "status": "published",
+      "brightness_min": 10,
+      "brightness_max": 13,
+      "hue": "pink",
+      "hue_label": "ピンク系",
+      "hue_note": null,
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["bleach"],
+      "history_label": "ブリーチ",
+      "before_photo": "images/IMG_0602.JPG",
+      "before_photo_alt": "Before: ピンク系、ブリーチ毛",
+      "after_photo": "images/IMG_0657.JPG",
+      "after_photo_alt": "After: PINKで色味補正",
+      "shampoo": [
+        { "color": "pink", "label": "PINK", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "pink", "label": "PINK", "ratio": 1 }
+      ],
+      "contact_time": "--",
+      "contact_time_note": null
+    },
+    {
+      "id": 4,
+      "status": "published",
+      "brightness_min": 16,
+      "brightness_max": 18,
+      "hue": "grege",
+      "hue_label": "グレージュ系",
+      "hue_note": null,
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["bleach"],
+      "history_label": "ブリーチ2回以上",
+      "before_photo": null,
+      "before_photo_alt": null,
+      "after_photo": "images/IMG_1241.JPG",
+      "after_photo_alt": "After: ASHでグレージュに",
+      "shampoo": [
+        { "color": "ash", "label": "ASH", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "ash", "label": "ASH", "ratio": 1 }
+      ],
+      "contact_time": "--",
+      "contact_time_note": null
+    },
+    {
+      "id": 5,
+      "status": "published",
+      "brightness_min": 16,
+      "brightness_max": 18,
+      "hue": "beige",
+      "hue_label": "ベージュ系",
+      "hue_note": null,
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["bleach"],
+      "history_label": "ブリーチ2回以上",
+      "before_photo": "images/IMG_3781.JPG",
+      "before_photo_alt": "Before: ベージュ系ハイトーン",
+      "after_photo": "images/IMG_3798.JPG",
+      "after_photo_alt": "After: BROWNで暖かみのあるトーンに",
+      "shampoo": [
+        { "color": "brown", "label": "BROWN", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "brown", "label": "BROWN", "ratio": 1 }
+      ],
+      "contact_time": "--",
+      "contact_time_note": null
+    },
+    {
+      "id": 6,
+      "status": "published",
+      "brightness_min": 10,
+      "brightness_max": 13,
+      "hue": "beige",
+      "hue_label": "ベージュ系",
+      "hue_note": null,
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["other"],
+      "history_label": "ハイライト",
+      "before_photo": "images/IMG_5325.JPG",
+      "before_photo_alt": "Before: ベージュ系ハイライト",
+      "after_photo": "images/IMG_5408.JPG",
+      "after_photo_alt": "After: 3色ミックスで自然なトーンに",
+      "shampoo": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 },
+        { "color": "ash", "label": "ASH", "ratio": 1 },
+        { "color": "brown", "label": "BROWN", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 },
+        { "color": "ash", "label": "ASH", "ratio": 1 },
+        { "color": "brown", "label": "BROWN", "ratio": 1 }
+      ],
+      "contact_time": "5分",
+      "contact_time_note": null
+    },
+    {
+      "id": 7,
+      "status": "published",
+      "brightness_min": 10,
+      "brightness_max": 13,
+      "hue": "ash",
+      "hue_label": "アッシュ系",
+      "hue_note": null,
+      "gray_ratio": "none",
+      "gray_ratio_label": "--",
+      "treatment_history": ["other"],
+      "history_label": "ハイライト",
+      "before_photo": "images/IMG_5448.JPG",
+      "before_photo_alt": "Before: アッシュ系ハイライト",
+      "after_photo": "images/IMG_5449.JPG",
+      "after_photo_alt": "After: 3色ミックスで透明感のあるトーンに",
+      "shampoo": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 },
+        { "color": "ash", "label": "ASH", "ratio": 1 },
+        { "color": "purple", "label": "PURPLE", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 },
+        { "color": "ash", "label": "ASH", "ratio": 1 },
+        { "color": "purple", "label": "PURPLE", "ratio": 1 }
+      ],
+      "contact_time": "5分",
+      "contact_time_note": null
+    },
+    {
+      "id": 8,
+      "status": "published",
+      "brightness_min": 6,
+      "brightness_max": 8,
+      "hue": "ash",
+      "hue_label": "アッシュ系",
+      "hue_note": null,
+      "gray_ratio": "30to50",
+      "gray_ratio_label": "30%",
+      "treatment_history": ["color"],
+      "history_label": "根本のみ白髪リタッチ",
+      "before_photo": "images/IMG_6378.JPG",
+      "before_photo_alt": "Before: アッシュ系、白髪あり",
+      "after_photo": "images/IMG_6379.JPG",
+      "after_photo_alt": "After: ASHで白髪をカバー",
+      "shampoo": [
+        { "color": "ash", "label": "ASH", "ratio": 1, "note": "3分放置" }
+      ],
+      "treatment": [
+        { "color": "ash", "label": "ASH", "ratio": 1, "note": "20分放置" }
+      ],
+      "contact_time": "シャンプー3分 → バッファ → トリートメント20分",
+      "contact_time_note": null
+    },
+    {
+      "id": 9,
+      "status": "published",
+      "brightness_min": 10,
+      "brightness_max": 13,
+      "hue": "beige",
+      "hue_label": "ベージュ系",
+      "hue_note": null,
+      "gray_ratio": "50to70",
+      "gray_ratio_label": "50%",
+      "treatment_history": ["other"],
+      "history_label": "ハイライト",
+      "before_photo": null,
+      "before_photo_alt": null,
+      "after_photo": "images/IMG_6380.JPG",
+      "after_photo_alt": "After: LAVENDERで白髪を活かしたトーンに",
+      "shampoo": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 }
+      ],
+      "treatment": [
+        { "color": "lavender", "label": "LAVENDER", "ratio": 1 }
+      ],
+      "contact_time": "--",
+      "contact_time_note": null
+    }
+  ]
+}

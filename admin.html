@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事例管理 | irop 施術事例集</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="design/irop_logo.png" alt="irop" class="header__logo-img">
+      </a>
+      <div class="color-bar">
+        <span class="color-bar__dot color-bar__dot--purple"></span>
+        <span class="color-bar__dot color-bar__dot--lavender"></span>
+        <span class="color-bar__dot color-bar__dot--pink"></span>
+        <span class="color-bar__dot color-bar__dot--ash"></span>
+        <span class="color-bar__dot color-bar__dot--brown"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h1 class="page-title">
+      事例管理
+      <span class="page-title__en">case management</span>
+    </h1>
+
+    <div class="admin-layout">
+
+      <!-- Form Section -->
+      <form class="admin-form" id="adminForm">
+
+        <!-- 基本情報 -->
+        <section class="admin-section">
+          <h2 class="admin-section__title">基本設定</h2>
+          <div class="admin-field">
+            <label class="admin-label" for="caseId">事例ID</label>
+            <input type="number" id="caseId" class="admin-input admin-input--short" min="1" value="10">
+          </div>
+          <div class="admin-field">
+            <label class="admin-label" for="caseStatus">ステータス</label>
+            <select id="caseStatus" class="admin-select">
+              <option value="published">公開</option>
+              <option value="draft">下書き</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- 施術前情報 -->
+        <section class="admin-section">
+          <h2 class="admin-section__title">施術前情報 <span class="info-section__title-en">before</span></h2>
+
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label class="admin-label" for="brightnessMin">明度レベル（最小）</label>
+              <input type="number" id="brightnessMin" class="admin-input admin-input--short" min="1" max="20" value="10">
+            </div>
+            <div class="admin-field">
+              <label class="admin-label" for="brightnessMax">明度レベル（最大）</label>
+              <input type="number" id="brightnessMax" class="admin-input admin-input--short" min="1" max="20" value="12">
+            </div>
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="hue">色相</label>
+            <select id="hue" class="admin-select">
+              <option value="yellow">イエロー</option>
+              <option value="golden">ゴールデン</option>
+              <option value="khaki">カーキ</option>
+              <option value="green">グリーン</option>
+              <option value="ash">アッシュ</option>
+              <option value="blue">ブルー</option>
+              <option value="purple">パープル</option>
+              <option value="pink">ピンク</option>
+              <option value="red">レッド</option>
+              <option value="orange">オレンジ</option>
+              <option value="beige" selected>ベージュ</option>
+              <option value="brown">ブラウン</option>
+              <option value="white">ホワイト</option>
+              <option value="silver">シルバー</option>
+              <option value="grege">グレージュ</option>
+              <option value="black">ブラック</option>
+            </select>
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="hueLabel">色相ラベル（表示用）</label>
+            <input type="text" id="hueLabel" class="admin-input" value="ベージュ系" placeholder="例: ベージュ系">
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="hueNote">色相の補足（任意）</label>
+            <input type="text" id="hueNote" class="admin-input" placeholder="例: やや黄みがかったブラウン">
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="grayRatio">白髪率</label>
+            <select id="grayRatio" class="admin-select">
+              <option value="none" selected>なし</option>
+              <option value="under10">10%未満</option>
+              <option value="10to20">10〜20%</option>
+              <option value="30to50">30〜50%</option>
+              <option value="50to70">50〜70%</option>
+              <option value="over70">70%以上</option>
+            </select>
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="grayRatioLabel">白髪率ラベル（表示用）</label>
+            <input type="text" id="grayRatioLabel" class="admin-input admin-input--short" value="--" placeholder="例: 30%">
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label">施術履歴</label>
+            <div class="admin-checkbox-group" id="historyGroup">
+              <label class="admin-checkbox"><input type="checkbox" value="none" checked> なし</label>
+              <label class="admin-checkbox"><input type="checkbox" value="relaxer"> 縮毛矯正</label>
+              <label class="admin-checkbox"><input type="checkbox" value="perm"> パーマ</label>
+              <label class="admin-checkbox"><input type="checkbox" value="bleach"> ブリーチ</label>
+              <label class="admin-checkbox"><input type="checkbox" value="color"> 通常カラー</label>
+              <label class="admin-checkbox"><input type="checkbox" value="other"> その他</label>
+            </div>
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="historyLabel">施術履歴ラベル（表示用）</label>
+            <input type="text" id="historyLabel" class="admin-input" value="特になし" placeholder="例: ブリーチ2回以上">
+          </div>
+        </section>
+
+        <!-- 写真情報 -->
+        <section class="admin-section">
+          <h2 class="admin-section__title">写真情報 <span class="info-section__title-en">photos</span></h2>
+
+          <div class="admin-field">
+            <label class="admin-label" for="beforePhoto">Before写真ファイル名（空欄でno photo）</label>
+            <input type="text" id="beforePhoto" class="admin-input" placeholder="例: IMG_1234（自動でimages/〇〇.JPGに変換）">
+          </div>
+          <div class="admin-field">
+            <label class="admin-label" for="beforePhotoAlt">Before写真の説明</label>
+            <input type="text" id="beforePhotoAlt" class="admin-input" placeholder="例: Before: 明るめの茶髪">
+          </div>
+          <div class="admin-field">
+            <label class="admin-label" for="afterPhoto">After写真ファイル名</label>
+            <input type="text" id="afterPhoto" class="admin-input" placeholder="例: IMG_5678（自動でimages/〇〇.JPGに変換）">
+          </div>
+          <div class="admin-field">
+            <label class="admin-label" for="afterPhotoAlt">After写真の説明</label>
+            <input type="text" id="afterPhotoAlt" class="admin-input" placeholder="例: After: トーンが落ち着いた">
+          </div>
+        </section>
+
+        <!-- 施術情報 -->
+        <section class="admin-section">
+          <h2 class="admin-section__title">施術情報 <span class="info-section__title-en">treatment</span></h2>
+
+          <!-- シャンプー -->
+          <div class="admin-field">
+            <label class="admin-label">シャンプー</label>
+            <label class="admin-checkbox">
+              <input type="checkbox" id="shampooNotUsed"> 未使用
+            </label>
+            <div id="shampooList" class="admin-recipe-list">
+              <div class="admin-recipe-row">
+                <select class="admin-select admin-recipe-color">
+                  <option value="purple">PURPLE</option>
+                  <option value="lavender">LAVENDER</option>
+                  <option value="pink">PINK</option>
+                  <option value="ash">ASH</option>
+                  <option value="brown">BROWN</option>
+                </select>
+                <input type="number" class="admin-input admin-input--tiny admin-recipe-ratio" min="1" value="1" placeholder="配合比">
+                <input type="text" class="admin-input admin-recipe-note" placeholder="備考（任意）">
+                <button type="button" class="admin-btn-remove" title="削除">&times;</button>
+              </div>
+            </div>
+            <button type="button" class="admin-btn-add" id="addShampoo">+ カラーを追加</button>
+          </div>
+
+          <!-- トリートメント -->
+          <div class="admin-field">
+            <label class="admin-label">トリートメント</label>
+            <div id="treatmentList" class="admin-recipe-list">
+              <div class="admin-recipe-row">
+                <select class="admin-select admin-recipe-color">
+                  <option value="purple">PURPLE</option>
+                  <option value="lavender">LAVENDER</option>
+                  <option value="pink">PINK</option>
+                  <option value="ash">ASH</option>
+                  <option value="brown">BROWN</option>
+                </select>
+                <input type="number" class="admin-input admin-input--tiny admin-recipe-ratio" min="1" value="1" placeholder="配合比">
+                <input type="text" class="admin-input admin-recipe-note" placeholder="備考（任意）">
+                <button type="button" class="admin-btn-remove" title="削除">&times;</button>
+              </div>
+            </div>
+            <button type="button" class="admin-btn-add" id="addTreatment">+ カラーを追加</button>
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="contactTime">放置時間</label>
+            <input type="text" id="contactTime" class="admin-input" value="5分" placeholder="例: 5分、--">
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="contactTimeNote">放置時間の補足（任意）</label>
+            <input type="text" id="contactTimeNote" class="admin-input" placeholder="例: シャンプー3分 → バッファ → トリートメント20分">
+          </div>
+        </section>
+
+        <!-- アクション -->
+        <section class="admin-section">
+          <div class="admin-actions">
+            <button type="button" class="admin-btn-primary" id="generateJson">JSONを生成</button>
+            <button type="button" class="admin-btn-secondary" id="copyJson">クリップボードにコピー</button>
+            <span class="admin-copy-status" id="copyStatus"></span>
+          </div>
+        </section>
+
+      </form>
+
+      <!-- Output Section -->
+      <div class="admin-output">
+        <h2 class="admin-section__title">生成されたJSON</h2>
+        <textarea class="admin-json-output" id="jsonOutput" readonly placeholder="「JSONを生成」ボタンを押すと、ここにデータが表示されます"></textarea>
+
+        <h2 class="admin-section__title">カードプレビュー</h2>
+        <div class="admin-preview-card" id="previewCard">
+          <p class="loading-text">フォームを入力してJSONを生成するとプレビューが表示されます</p>
+        </div>
+
+        <h2 class="admin-section__title">詳細プレビュー</h2>
+        <div class="admin-preview-detail" id="previewDetail">
+          <p class="loading-text">フォームを入力してJSONを生成するとプレビューが表示されます</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <img src="design/irop_logo.png" alt="irop" class="footer__logo-img">
+      <p class="footer__copy">&copy; irop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/case-templates.js"></script>
+  <script src="js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+
+# 参考資料（リポジトリには含めない）
+FIX_231110FIX_イロップ　診断ロジック.png
+irop 色一覧.png
+サロン様公開用｜iropご紹介資料.pptx
+
+# ライセンス未確認のフォント・マニュアル
+design/英字typo_roundフォント/
+design/240318_irop_manual.pdf

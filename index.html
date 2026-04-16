@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>irop 施術事例集</title>
+  <meta name="description" content="irop カラーシャンプー・カラートリートメントの施術事例集。Before/Afterの写真と施術情報を掲載しています。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="design/irop_logo.png" alt="irop" class="header__logo-img">
+      </a>
+      <div class="color-bar">
+        <span class="color-bar__dot color-bar__dot--purple"></span>
+        <span class="color-bar__dot color-bar__dot--lavender"></span>
+        <span class="color-bar__dot color-bar__dot--pink"></span>
+        <span class="color-bar__dot color-bar__dot--ash"></span>
+        <span class="color-bar__dot color-bar__dot--brown"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h1 class="page-title">
+      施術事例集
+      <span class="page-title__en">case collection</span>
+    </h1>
+
+    <!-- フィルター -->
+    <div class="filter-section">
+      <button type="button" class="filter-toggle" id="filterToggle">
+        絞り込み
+        <span class="filter-badge" id="filterBadge" hidden>0</span>
+        <span class="filter-toggle__arrow" id="filterArrow">&#9662;</span>
+      </button>
+
+      <div class="filter-panel" id="filterPanel" hidden>
+
+        <!-- 明度レベル -->
+        <div class="filter-group">
+          <p class="filter-group__title">明度レベル <span class="filter-group__title-en">brightness</span></p>
+          <div class="filter-brightness">
+            <label class="filter-brightness__label">
+              Lv.<input type="number" id="brightnessMin" class="filter-brightness__input" min="1" max="20" inputmode="numeric" placeholder="1">
+            </label>
+            <span class="filter-brightness__sep">〜</span>
+            <label class="filter-brightness__label">
+              Lv.<input type="number" id="brightnessMax" class="filter-brightness__input" min="1" max="20" inputmode="numeric" placeholder="20">
+            </label>
+          </div>
+        </div>
+
+        <!-- 髪の色相 -->
+        <div class="filter-group">
+          <p class="filter-group__title">髪の色相 <span class="filter-group__title-en">hue</span></p>
+          <div class="filter-hue-grid" id="hueGrid">
+            <button type="button" class="filter-hue-btn" data-value="yellow" title="イエロー"><span class="filter-hue-btn__swatch" style="background-color: #e8d44d;"></span><span class="filter-hue-btn__name">イエロー</span></button>
+            <button type="button" class="filter-hue-btn" data-value="golden" title="ゴールデン"><span class="filter-hue-btn__swatch" style="background-color: #d4a843;"></span><span class="filter-hue-btn__name">ゴールデン</span></button>
+            <button type="button" class="filter-hue-btn" data-value="khaki" title="カーキ"><span class="filter-hue-btn__swatch" style="background-color: #8b8b3a;"></span><span class="filter-hue-btn__name">カーキ</span></button>
+            <button type="button" class="filter-hue-btn" data-value="green" title="グリーン"><span class="filter-hue-btn__swatch" style="background-color: #5a9e6f;"></span><span class="filter-hue-btn__name">グリーン</span></button>
+            <button type="button" class="filter-hue-btn" data-value="ash" title="アッシュ"><span class="filter-hue-btn__swatch" style="background-color: #8a9db5;"></span><span class="filter-hue-btn__name">アッシュ</span></button>
+            <button type="button" class="filter-hue-btn" data-value="blue" title="ブルー"><span class="filter-hue-btn__swatch" style="background-color: #5b7dab;"></span><span class="filter-hue-btn__name">ブルー</span></button>
+            <button type="button" class="filter-hue-btn" data-value="purple" title="パープル"><span class="filter-hue-btn__swatch" style="background-color: #8b5ea5;"></span><span class="filter-hue-btn__name">パープル</span></button>
+            <button type="button" class="filter-hue-btn" data-value="pink" title="ピンク"><span class="filter-hue-btn__swatch" style="background-color: #d4839e;"></span><span class="filter-hue-btn__name">ピンク</span></button>
+            <button type="button" class="filter-hue-btn" data-value="red" title="レッド"><span class="filter-hue-btn__swatch" style="background-color: #c0524d;"></span><span class="filter-hue-btn__name">レッド</span></button>
+            <button type="button" class="filter-hue-btn" data-value="orange" title="オレンジ"><span class="filter-hue-btn__swatch" style="background-color: #d4854a;"></span><span class="filter-hue-btn__name">オレンジ</span></button>
+            <button type="button" class="filter-hue-btn" data-value="beige" title="ベージュ"><span class="filter-hue-btn__swatch" style="background-color: #c8b08a;"></span><span class="filter-hue-btn__name">ベージュ</span></button>
+            <button type="button" class="filter-hue-btn" data-value="brown" title="ブラウン"><span class="filter-hue-btn__swatch" style="background-color: #8b6544;"></span><span class="filter-hue-btn__name">ブラウン</span></button>
+            <button type="button" class="filter-hue-btn" data-value="white" title="ホワイト"><span class="filter-hue-btn__swatch" style="background-color: #f0eded;"></span><span class="filter-hue-btn__name">ホワイト</span></button>
+            <button type="button" class="filter-hue-btn" data-value="silver" title="シルバー"><span class="filter-hue-btn__swatch" style="background-color: #b8b8b8;"></span><span class="filter-hue-btn__name">シルバー</span></button>
+            <button type="button" class="filter-hue-btn" data-value="grege" title="グレージュ"><span class="filter-hue-btn__swatch" style="background-color: #a89e93;"></span><span class="filter-hue-btn__name">グレージュ</span></button>
+            <button type="button" class="filter-hue-btn" data-value="black" title="ブラック"><span class="filter-hue-btn__swatch" style="background-color: #3a3a3a;"></span><span class="filter-hue-btn__name">ブラック</span></button>
+          </div>
+        </div>
+
+        <!-- 白髪率 -->
+        <div class="filter-group">
+          <p class="filter-group__title">白髪率 <span class="filter-group__title-en">gray hair ratio</span></p>
+          <div class="filter-chips" id="grayChips">
+            <button type="button" class="filter-chip" data-value="under10">10%未満</button>
+            <button type="button" class="filter-chip" data-value="10to20">10〜20%</button>
+            <button type="button" class="filter-chip" data-value="30to50">30〜50%</button>
+            <button type="button" class="filter-chip" data-value="50to70">50〜70%</button>
+            <button type="button" class="filter-chip" data-value="over70">70%以上</button>
+          </div>
+        </div>
+
+        <!-- 施術履歴 -->
+        <div class="filter-group">
+          <p class="filter-group__title">施術履歴 <span class="filter-group__title-en">treatment history</span></p>
+          <div class="filter-chips" id="historyChips">
+            <button type="button" class="filter-chip" data-value="relaxer">縮毛矯正</button>
+            <button type="button" class="filter-chip" data-value="perm">パーマ</button>
+            <button type="button" class="filter-chip" data-value="bleach">ブリーチ</button>
+            <button type="button" class="filter-chip" data-value="color">通常カラー</button>
+            <button type="button" class="filter-chip" data-value="other">その他</button>
+          </div>
+        </div>
+
+        <!-- 使用iropカラー -->
+        <div class="filter-group">
+          <p class="filter-group__title">使用iropカラー <span class="filter-group__title-en">irop colors</span></p>
+          <div class="filter-chips" id="colorChips">
+            <button type="button" class="filter-color-btn" data-value="purple"><span class="filter-color-btn__swatch" style="background-color: var(--color-purple);"></span>PURPLE</button>
+            <button type="button" class="filter-color-btn" data-value="lavender"><span class="filter-color-btn__swatch" style="background-color: var(--color-lavender);"></span>LAVENDER</button>
+            <button type="button" class="filter-color-btn" data-value="pink"><span class="filter-color-btn__swatch" style="background-color: var(--color-pink);"></span>PINK</button>
+            <button type="button" class="filter-color-btn" data-value="ash"><span class="filter-color-btn__swatch" style="background-color: var(--color-ash);"></span>ASH</button>
+            <button type="button" class="filter-color-btn" data-value="brown"><span class="filter-color-btn__swatch" style="background-color: var(--color-brown);"></span>BROWN</button>
+          </div>
+        </div>
+
+        <!-- アクション -->
+        <div class="filter-actions">
+          <button type="button" class="filter-reset" id="filterReset">リセット</button>
+          <span class="filter-count" id="filterCount">6件の事例</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- カード一覧エリア -->
+    <div class="card-grid">
+
+      <!-- 事例 1: PURPLE + LAVENDER -->
+      <a href="case-detail.html?id=1" class="case-card"
+         data-brightness-min="10" data-brightness-max="12"
+         data-hue="beige" data-gray="none"
+         data-history="none" data-colors="purple,lavender">
+        <div class="case-card__images">
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6502.JPG" alt="Before: 明るめの茶髪、黄みがかったトーン" class="case-card__img">
+            <span class="case-card__label">before</span>
+          </div>
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6503.JPG" alt="After: 黄みが抑えられ落ち着いたトーン" class="case-card__img">
+            <span class="case-card__label">after</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__brightness">
+            <span class="case-card__brightness-value">Lv.10-12</span>
+          </div>
+          <div class="case-card__colors">
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-purple);"></span>
+              PURPLE
+            </span>
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-lavender);"></span>
+              LAVENDER
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 事例 2: BROWN -->
+      <a href="case-detail.html?id=2" class="case-card"
+         data-brightness-min="8" data-brightness-max="8"
+         data-hue="brown" data-gray="none"
+         data-history="relaxer" data-colors="brown">
+        <div class="case-card__images">
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6504.JPG" alt="Before: 暗めの茶髪、やや赤みあり" class="case-card__img">
+            <span class="case-card__label">before</span>
+          </div>
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6505.JPG" alt="After: ツヤが出て整った印象" class="case-card__img">
+            <span class="case-card__label">after</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__brightness">
+            <span class="case-card__brightness-value">Lv.8</span>
+          </div>
+          <div class="case-card__colors">
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-brown);"></span>
+              BROWN
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 事例 3: PURPLE -->
+      <a href="case-detail.html?id=3" class="case-card"
+         data-brightness-min="14" data-brightness-max="14"
+         data-hue="yellow" data-gray="under10"
+         data-history="bleach" data-colors="purple">
+        <div class="case-card__images">
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6502.JPG" alt="Before: 明るめの茶髪" class="case-card__img">
+            <span class="case-card__label">before</span>
+          </div>
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6503.JPG" alt="After: パープルトーンに変化" class="case-card__img">
+            <span class="case-card__label">after</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__brightness">
+            <span class="case-card__brightness-value">Lv.14</span>
+          </div>
+          <div class="case-card__colors">
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-purple);"></span>
+              PURPLE
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 事例 4: ASH + PURPLE -->
+      <a href="case-detail.html?id=4" class="case-card"
+         data-brightness-min="6" data-brightness-max="6"
+         data-hue="ash" data-gray="10to20"
+         data-history="color" data-colors="ash,purple">
+        <div class="case-card__images">
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6504.JPG" alt="Before: 暗めの茶髪" class="case-card__img">
+            <span class="case-card__label">before</span>
+          </div>
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6505.JPG" alt="After: アッシュトーンに変化" class="case-card__img">
+            <span class="case-card__label">after</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__brightness">
+            <span class="case-card__brightness-value">Lv.6</span>
+          </div>
+          <div class="case-card__colors">
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-ash);"></span>
+              ASH
+            </span>
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-purple);"></span>
+              PURPLE
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 事例 5: PINK + LAVENDER -->
+      <a href="case-detail.html?id=5" class="case-card"
+         data-brightness-min="9" data-brightness-max="9"
+         data-hue="pink" data-gray="none"
+         data-history="perm" data-colors="pink,lavender">
+        <div class="case-card__images">
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6502.JPG" alt="Before: 明るめの茶髪" class="case-card__img">
+            <span class="case-card__label">before</span>
+          </div>
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6503.JPG" alt="After: ピンクラベンダートーンに変化" class="case-card__img">
+            <span class="case-card__label">after</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__brightness">
+            <span class="case-card__brightness-value">Lv.9</span>
+          </div>
+          <div class="case-card__colors">
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-pink);"></span>
+              PINK
+            </span>
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-lavender);"></span>
+              LAVENDER
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 事例 6: BROWN + ASH -->
+      <a href="case-detail.html?id=6" class="case-card"
+         data-brightness-min="11" data-brightness-max="11"
+         data-hue="orange" data-gray="30to50"
+         data-history="color,bleach" data-colors="brown,ash">
+        <div class="case-card__images">
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6504.JPG" alt="Before: 暗めの茶髪" class="case-card__img">
+            <span class="case-card__label">before</span>
+          </div>
+          <div class="case-card__img-wrap">
+            <img src="images/IMG_6505.JPG" alt="After: ブラウンアッシュトーンに変化" class="case-card__img">
+            <span class="case-card__label">after</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__brightness">
+            <span class="case-card__brightness-value">Lv.11</span>
+          </div>
+          <div class="case-card__colors">
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-brown);"></span>
+              BROWN
+            </span>
+            <span class="color-chip">
+              <span class="color-chip__swatch" style="background-color: var(--color-ash);"></span>
+              ASH
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- フィルター結果なし -->
+    <div class="empty-state filter-empty" id="filterEmpty" hidden>
+      <p class="empty-state__text">条件に一致する事例が見つかりませんでした。<br>フィルターを変更してお試しください。</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <img src="design/irop_logo.png" alt="irop" class="footer__logo-img">
+      <p class="footer__copy">&copy; irop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Filter Script -->
+  <script src="js/filter.js"></script>
+
+</body>
+</html>

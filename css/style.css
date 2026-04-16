@@ -1,0 +1,856 @@
+/* ==========================================================================
+   irop 施術事例集 — Base Styles
+   ブランドガイドライン (CIVI Guideline Ver.01) 準拠
+   ========================================================================== */
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* tasu シリーズ ブランドカラー */
+  --color-purple: #824fa3;
+  --color-lavender: #dabfdd;
+  --color-pink: #e57893;
+  --color-ash: #6f89bc;
+  --color-brown: #a87d4c;
+
+  /* mamoru シリーズ */
+  --color-gray: #d7d7d7;
+
+  /* ベースカラー */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-bg: #fafafa;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-border: #e8e8e8;
+
+  /* フォント */
+  --font-display: 'Comfortaa', cursive;
+  --font-body: 'Zen Kaku Gothic New', sans-serif;
+
+  /* スペーシング */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* レイアウト */
+  --max-width: 1024px;
+  --header-height: 56px;
+}
+
+/* --- Reset / Normalize --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-purple);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* --- Header --- */
+.header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-img {
+  height: 24px;
+  width: auto;
+}
+
+/* --- Color Bar (irop Key Motif) --- */
+.color-bar {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.color-bar__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.color-bar__dot--purple { background-color: var(--color-purple); }
+.color-bar__dot--lavender { background-color: var(--color-lavender); }
+.color-bar__dot--pink { background-color: var(--color-pink); }
+.color-bar__dot--ash { background-color: var(--color-ash); }
+.color-bar__dot--brown { background-color: var(--color-brown); }
+
+/* --- Main --- */
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* --- Page Title --- */
+.page-title {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.page-title__en {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  display: block;
+  margin-top: var(--space-xs);
+  letter-spacing: 0.1em;
+}
+
+/* --- Card Grid (M1で使用) --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+/* --- Empty State --- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--color-text-light);
+}
+
+.empty-state__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.4;
+}
+
+.empty-state__text {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+/* --- Case Card --- */
+.case-card[hidden] {
+  display: none;
+}
+
+.case-card {
+  display: block;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+  opacity: 1;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.case-card__images {
+  display: flex;
+  gap: 2px;
+  background-color: var(--color-bg);
+}
+
+.case-card__img-wrap {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.case-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-card__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--color-white);
+  padding: 12px 0 4px;
+}
+
+.case-card__body {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.case-card__brightness {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.case-card__brightness-value {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.case-card__colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__logo-img {
+  height: 20px;
+  width: auto;
+  margin: 0 auto var(--space-sm);
+}
+
+.footer__copy {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+/* --- Color Chip (カラー表示用) --- */
+.color-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+.color-chip__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+}
+
+/* --- Responsive (Tablet+) --- */
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+  }
+
+  .case-card__label {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
+/* ==========================================================================
+   Case Detail (M2)
+   ========================================================================== */
+
+/* --- Back Link --- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--color-purple);
+  opacity: 1;
+}
+
+/* --- Photo Comparison --- */
+.photo-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  background-color: var(--color-bg);
+}
+
+.photo-compare__item {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  max-height: 60vh;
+}
+
+.photo-compare__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-compare__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--color-white);
+  padding: 16px 0 6px;
+}
+
+/* --- Info Section --- */
+.info-section {
+  margin-bottom: var(--space-xl);
+}
+
+.info-section__title {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-md);
+}
+
+.info-section__title-en {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  letter-spacing: 0.1em;
+  margin-left: var(--space-sm);
+}
+
+/* --- Info List (dl) --- */
+.info-list {
+  list-style: none;
+}
+
+.info-list__row {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: baseline;
+}
+
+.info-list__row:last-child {
+  border-bottom: none;
+}
+
+.info-list__label {
+  flex: 0 0 6em;
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+.info-list__value {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.info-list__note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 2px;
+}
+
+/* --- Lightness Badge --- */
+.lightness-badge {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* --- Time Badge --- */
+.time-badge {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* --- Hue Chip (16色相表示) --- */
+.hue-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8125rem;
+  color: var(--color-text);
+}
+
+.hue-chip::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+/* 色相環ベース 11種 */
+.hue-chip--yellow::before { background-color: #e8d44d; }
+.hue-chip--golden::before { background-color: #d4a843; }
+.hue-chip--khaki::before { background-color: #8b8b3a; }
+.hue-chip--green::before { background-color: #5a9e6f; }
+.hue-chip--ash::before { background-color: #8a9db5; }
+.hue-chip--blue::before { background-color: #5b7dab; }
+.hue-chip--purple::before { background-color: #8b5ea5; }
+.hue-chip--pink::before { background-color: #d4839e; }
+.hue-chip--red::before { background-color: #c0524d; }
+.hue-chip--orange::before { background-color: #d4854a; }
+.hue-chip--beige::before { background-color: #c8b08a; }
+
+/* 無彩色・特殊系 5種 */
+.hue-chip--white::before { background-color: #f0eded; }
+.hue-chip--silver::before { background-color: #b8b8b8; }
+.hue-chip--grege::before { background-color: #a89e93; }
+.hue-chip--black::before { background-color: #3a3a3a; }
+.hue-chip--brown::before { background-color: #8b6544; }
+
+/* --- Color Recipe (カラー配合表示) --- */
+.color-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.color-recipe__ratio {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.color-recipe__type {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+/* --- Not Used (未使用表示) --- */
+.not-used {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+/* --- Responsive: Tablet+ (M2追加) --- */
+@media (min-width: 600px) {
+  .photo-compare {
+    flex-direction: row;
+  }
+
+  .photo-compare__item {
+    flex: 1;
+    max-height: none;
+  }
+
+  .photo-compare__label {
+    font-size: 0.8125rem;
+  }
+}
+
+/* --- Responsive: Desktop (M2追加) --- */
+@media (min-width: 900px) {
+  .detail-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* ==========================================================================
+   Filter (M3)
+   ========================================================================== */
+
+/* --- Filter Section --- */
+.filter-section {
+  margin-bottom: var(--space-lg);
+}
+
+/* --- Filter Toggle Button --- */
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.filter-toggle:hover {
+  border-color: var(--color-purple);
+}
+
+.filter-toggle--active {
+  border-color: var(--color-purple);
+  background-color: rgba(130, 79, 163, 0.05);
+}
+
+.filter-toggle__arrow {
+  font-size: 0.625rem;
+  transition: transform 0.2s ease;
+}
+
+.filter-toggle--active .filter-toggle__arrow {
+  transform: rotate(180deg);
+}
+
+/* --- Filter Badge --- */
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --- Filter Panel --- */
+.filter-panel {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-lg) var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+/* --- Filter Group --- */
+.filter-group {
+  margin-bottom: var(--space-lg);
+}
+
+.filter-group:last-of-type {
+  margin-bottom: var(--space-md);
+}
+
+.filter-group__title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.filter-group__title-en {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  letter-spacing: 0.08em;
+  margin-left: var(--space-xs);
+}
+
+/* --- Brightness Inputs --- */
+.filter-brightness {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.filter-brightness__label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.filter-brightness__input {
+  width: 52px;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.filter-brightness__input:focus {
+  outline: none;
+  border-color: var(--color-purple);
+}
+
+.filter-brightness__sep {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+/* --- Hue Grid --- */
+.filter-hue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.filter-hue-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-sm) var(--space-xs);
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.filter-hue-btn:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.filter-hue-btn--active {
+  border-color: var(--color-purple);
+  background-color: rgba(130, 79, 163, 0.06);
+}
+
+.filter-hue-btn__swatch {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.filter-hue-btn__name {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--color-text-light);
+  line-height: 1.2;
+}
+
+/* --- Filter Chips (白髪率・施術履歴) --- */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--color-purple);
+}
+
+.filter-chip--active {
+  border-color: var(--color-purple);
+  background-color: var(--color-purple);
+  color: var(--color-white);
+}
+
+/* --- Filter Color Buttons (iropカラー) --- */
+.filter-color-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.filter-color-btn:hover {
+  border-color: var(--color-purple);
+}
+
+.filter-color-btn--active {
+  border-color: var(--color-purple);
+  background-color: rgba(130, 79, 163, 0.08);
+}
+
+.filter-color-btn__swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+/* --- Filter Actions --- */
+.filter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.filter-reset {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--color-purple);
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+}
+
+.filter-reset:hover {
+  opacity: 0.7;
+}
+
+.filter-count {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+/* --- Filter Empty State --- */
+.filter-empty[hidden] {
+  display: none;
+}
+
+.filter-empty {
+  margin-top: var(--space-lg);
+}
+
+/* --- Responsive: Tablet+ (M3追加) --- */
+@media (min-width: 600px) {
+  .filter-hue-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .filter-panel {
+    padding: var(--space-lg);
+  }
+}
+
+@media (min-width: 900px) {
+  .filter-panel {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}

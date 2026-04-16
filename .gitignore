@@ -9,6 +9,11 @@ FIX_231110FIX_イロップ　診断ロジック.png
 irop 色一覧.png
 サロン様公開用｜iropご紹介資料.pptx
 
+# 元画像（HEIC/PNG → JPGに変換済み）
+images/*.heic
+images/*.HEIC
+images/*.PNG
+
 # ライセンス未確認のフォント・マニュアル
 design/英字typo_roundフォント/
 design/240318_irop_manual.pdf

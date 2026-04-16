@@ -17,3 +17,6 @@ images/*.PNG
 # ライセンス未確認のフォント・マニュアル
 design/英字typo_roundフォント/
 design/240318_irop_manual.pdf
+
+# ドキュメント（業務知識・設計情報のため非公開）
+docs/

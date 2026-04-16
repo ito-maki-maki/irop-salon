@@ -95,7 +95,7 @@ var CaseTemplates = (function() {
     // Before
     html += '<div class="case-card__img-wrap">';
     if (c.before_photo) {
-      html += '<img src="' + c.before_photo + '" alt="' + (c.before_photo_alt || '') + '" class="case-card__img">';
+      html += '<img src="' + c.before_photo + '" alt="' + (c.before_photo_alt || '') + '" class="case-card__img" loading="lazy" width="400" height="533">';
     } else {
       html += '<div class="case-card__placeholder">no photo</div>';
     }
@@ -104,7 +104,7 @@ var CaseTemplates = (function() {
 
     // After
     html += '<div class="case-card__img-wrap">';
-    html += '<img src="' + c.after_photo + '" alt="' + (c.after_photo_alt || '') + '" class="case-card__img">';
+    html += '<img src="' + c.after_photo + '" alt="' + (c.after_photo_alt || '') + '" class="case-card__img" loading="lazy" width="400" height="533">';
     html += '<span class="case-card__label">after</span>';
     html += '</div>';
 
@@ -136,14 +136,14 @@ var CaseTemplates = (function() {
     html += '<section class="photo-compare">';
     html += '<div class="photo-compare__item">';
     if (c.before_photo) {
-      html += '<img src="' + c.before_photo + '" alt="' + (c.before_photo_alt || '') + '" class="photo-compare__img">';
+      html += '<img src="' + c.before_photo + '" alt="' + (c.before_photo_alt || '') + '" class="photo-compare__img" loading="lazy" width="1200" height="1600">';
     } else {
       html += '<div class="photo-compare__placeholder">no photo</div>';
     }
     html += '<span class="photo-compare__label">before</span>';
     html += '</div>';
     html += '<div class="photo-compare__item">';
-    html += '<img src="' + c.after_photo + '" alt="' + (c.after_photo_alt || '') + '" class="photo-compare__img">';
+    html += '<img src="' + c.after_photo + '" alt="' + (c.after_photo_alt || '') + '" class="photo-compare__img" loading="lazy" width="1200" height="1600">';
     html += '<span class="photo-compare__label">after</span>';
     html += '</div>';
     html += '</section>';

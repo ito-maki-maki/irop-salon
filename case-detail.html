@@ -17,6 +17,22 @@
 </head>
 <body>
 
+  <!-- Auth Gate -->
+  <div id="authGate" class="auth-gate">
+    <div class="auth-gate__inner">
+      <img src="design/irop_logo.png" alt="irop" class="auth-gate__logo">
+      <p class="auth-gate__title">case collection</p>
+      <form id="authForm">
+        <input type="password" id="authInput" class="auth-gate__input" placeholder="パスワードを入力" autocomplete="off">
+        <button type="submit" class="auth-gate__btn">ログイン</button>
+        <p id="authError" class="auth-gate__error" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Content (hidden until authenticated) -->
+  <div id="authContent" style="display:none">
+
   <!-- Header -->
   <header class="header">
     <div class="header__inner">
@@ -51,7 +67,10 @@
     </div>
   </footer>
 
+  </div><!-- /authContent -->
+
   <!-- Scripts -->
+  <script src="js/auth.js"></script>
   <script src="js/case-templates.js"></script>
   <script src="js/render.js"></script>
 
